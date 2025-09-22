@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "courses": [
+      { "id": "uuid-1-1", "code": "HS3151", "name": "Professional English - I", "credits": 3, "grade": null },
+      { "id": "uuid-1-2", "code": "MA3151", "name": "Matrices and Calculus", "credits": 4, "grade": null },
+      { "id": "uuid-1-3", "code": "PH3151", "name": "Engineering Physics", "credits": 3, "grade": null },
+      { "id": "uuid-1-4", "code": "CY3151", "name": "Engineering Chemistry", "credits": 3, "grade": null },
+      { "id": "uuid-1-5", "code": "GE3151", "name": "Problem Solving & Python Programming", "credits": 3, "grade": null },
+      { "id": "uuid-1-6", "code": "GE3171", "name": "Problem Solving & Python Lab", "credits": 2, "grade": null },
+      { "id": "uuid-1-7", "code": "BS3171", "name": "Physics and Chemistry Laboratory", "credits": 2, "grade": null }
+    ]
+  },
+  {
+    "id": 2,
+    "courses": [
+      { "id": "uuid-2-1", "code": "HS3251", "name": "Professional English - II", "credits": 2, "grade": null },
+      { "id": "uuid-2-2", "code": "MA3251", "name": "Statistics & Numerical Methods", "credits": 4, "grade": null },
+      { "id": "uuid-2-3", "code": "PH3256", "name": "Physics for Information Science", "credits": 3, "grade": null },
+      { "id": "uuid-2-4", "code": "BE3251", "name": "Basic Electrical & Electronics Engg", "credits": 3, "grade": null },
+      { "id": "uuid-2-5", "code": "GE3251", "name": "Engineering Graphics", "credits": 4, "grade": null },
+      { "id": "uuid-2-6", "code": "CS3251", "name": "Programming in C", "credits": 3, "grade": null },
+      { "id": "uuid-2-7", "code": "GE3271", "name": "Engineering Practices Laboratory", "credits": 2, "grade": null },
+      { "id": "uuid-2-8", "code": "CS3271", "name": "C Programming Laboratory", "credits": 2, "grade": null }
+    ]
+  },
+  {
+    "id": 3,
+    "courses": [
+        { "id": "uuid-3-1", "code": "MA3354", "name": "Discrete Mathematics", "credits": 4, "grade": null },
+        { "id": "uuid-3-2", "code": "CS3351", "name": "Digital Principles & Computer Org", "credits": 4, "grade": null },
+        { "id": "uuid-3-3", "code": "CS3352", "name": "Foundations of Data Science", "credits": 3, "grade": null },
+        { "id": "uuid-3-4", "code": "CS3391", "name": "Object Oriented Programming", "credits": 3, "grade": null },
+        { "id": "uuid-3-5", "code": "CS3301", "name": "Data Structures", "credits": 3, "grade": null },
+        { "id": "uuid-3-6", "code": "CS3311", "name": "Data Structures Laboratory", "credits": 2, "grade": null },
+        { "id": "uuid-3-7", "code": "CS3381", "name": "Object Oriented Programming Lab", "credits": 2, "grade": null },
+        { "id": "uuid-3-8", "code": "CS3361", "name": "Data Science Laboratory", "credits": 2, "grade": null },
+        { "id": "uuid-3-9", "code": "GE3361", "name": "Professional Development", "credits": 1, "grade": null }
+    ]
+  },
+  {
+    "id": 4,
+    "courses": [
+        { "id": "uuid-4-1", "code": "CS3451", "name": "Introduction to Operating Systems", "credits": 3, "grade": null },
+        { "id": "uuid-4-2", "code": "CS3491", "name": "Artificial Intelligence and Machine Learning", "credits": 4, "grade": null },
+        { "id": "uuid-4-3", "code": "CS3492", "name": "Database Management Systems", "credits": 3, "grade": null },
+        { "id": "uuid-4-4", "code": "CS3401", "name": "Algorithms", "credits": 3, "grade": null },
+        { "id": "uuid-4-5", "code": "GE3451", "name": "Environmental Sciences and Sustainability", "credits": 2, "grade": null },
+        { "id": "uuid-4-6", "code": "CS3461", "name": "Operating Systems Laboratory", "credits": 2, "grade": null },
+        { "id": "uuid-4-7", "code": "CS3481", "name": "Database Management Systems Lab", "credits": 2, "grade": null }
+    ]
+  },
+  {
+    "id": 5,
+    "courses": [
+        { "id": "uuid-5-1", "code": "CS3591", "name": "Computer Networks", "credits": 4, "grade": null },
+        { "id": "uuid-5-2", "code": "CS3501", "name": "Compiler Design", "credits": 4, "grade": null },
+        { "id": "uuid-5-3", "code": "CS3551", "name": "Distributed Computing", "credits": 3, "grade": null },
+        { "id": "uuid-5-4", "code": "CB3491", "name": "Cryptography and Cyber Security", "credits": 3, "grade": null },
+        { "id": "uuid-5-5", "code": "PE-I", "name": "Professional Elective I", "credits": 3, "grade": null },
+        { "id": "uuid-5-6", "code": "OEC-I", "name": "Open Elective I", "credits": 3, "grade": null },
+        { "id": "uuid-5-7", "code": "CS3511", "name": "Networks Laboratory", "credits": 2, "grade": null }
+    ]
+  },
+  {
+    "id": 6,
+    "courses": [
+        { "id": "uuid-6-1", "code": "CS3691", "name": "Embedded Systems and IoT", "credits": 4, "grade": null },
+        { "id": "uuid-6-2", "code": "CS3651", "name": "Full Stack Development", "credits": 3, "grade": null },
+        { "id": "uuid-6-3", "code": "PE-II", "name": "Professional Elective II", "credits": 3, "grade": null },
+        { "id": "uuid-6-4", "code": "PE-III", "name": "Professional Elective III", "credits": 3, "grade": null },
+        { "id": "uuid-6-5", "code": "PE-IV", "name": "Professional Elective IV", "credits": 3, "grade": null },
+        { "id": "uuid-6-6", "code": "OEC-II", "name": "Open Elective II", "credits": 3, "grade": null },
+        { "id": "uuid-6-7", "code": "CS3661", "name": "IoT and Full Stack Development Lab", "credits": 2, "grade": null },
+        { "id": "uuid-6-8", "code": "CS3611", "name": "Mini Project", "credits": 1, "grade": null }
+    ]
+  },
+  {
+    "id": 7,
+    "courses": [
+        { "id": "uuid-7-1", "code": "PE-V", "name": "Professional Elective V", "credits": 3, "grade": null },
+        { "id": "uuid-7-2", "code": "PE-VI", "name": "Professional Elective VI", "credits": 3, "grade": null },
+        { "id": "uuid-7-3", "code": "PE-VII", "name": "Professional Elective VII", "credits": 3, "grade": null },
+        { "id": "uuid-7-4", "code": "OEC-III", "name": "Open Elective III", "credits": 3, "grade": null },
+        { "id": "uuid-7-5", "code": "OEC-IV", "name": "Open Elective IV", "credits": 3, "grade": null },
+        { "id": "uuid-7-6", "code": "CS3711", "name": "Summer Internship", "credits": 2, "grade": null }
+    ]
+  },
+  {
+    "id": 8,
+    "courses": [
+        { "id": "uuid-8-1", "code": "CS3811", "name": "Project Work / Internship", "credits": 10, "grade": null }
+    ]
+  }
+]
+

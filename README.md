@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Anna University R-2021 CGPA Calculator (B.E. CSE)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium, fast, and accurate CGPA calculator tailored specifically for the **B.E. Computer Science & Engineering** curriculum under **Anna University's Regulation 2021**.
 
-## Available Scripts
+This tool provides students with a high-end interface to calculate, simulate, and visualize their academic performance.
 
-In the project directory, you can run:
+**Live Demo (Mock):** [https://your-app-name.vercel.app](https://your-app-name.vercel.app)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   **Regulation-Ready:** Implements the exact grade-point mapping and CGPA calculation rules as per the official Anna University Regulation 2021.
+-   **CSE Preset:** Preloaded with the complete 8-semester course list for B.E. Computer Science & Engineering (R-2021), including course codes and credits.
+-   **What-If Simulator:** Project your future CGPA by entering expected grades for upcoming semesters.
+-   **Arrear/Reattempt Handling:** Automatically uses the best grade for a course in the final CGPA calculation, as mandated by the regulation.
+-   **Visual Dashboards:** Interactive charts to visualize your semester-wise GPA trend, grade distribution, and more.
+-   **Export & Share:** Export your results as a professional PDF, a CSV file, or share a unique, permanent link to your calculations.
+-   **Modern UI/UX:** Built with a stunning, responsive design, including a dark/light theme toggle and subtle animations.
+-   **Fully Accessible:** Adheres to WCAG standards for color contrast, keyboard navigation, and screen reader support.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authoritative Sources & Citations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The accuracy of this calculator is based on the following official documents from Anna University:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  **Academic Regulations 2021 (R-2021):**
+    * **Source:** Anna University - Centre for Academic Courses
+    * **Link:** [B.E./B.Tech. Full Time Regulations 2021 PDF](https://cac.annauniv.edu/Generic%20File/Regulations/2021/R-2021-UG-FT.pdf)
+    * **Reference:** Page 10, Clause 8.5 for Grade-Point Mapping and Page 14, Clause 12.0 for CGPA Calculation & Reattempt Policy.
 
-### `npm run eject`
+2.  **B.E. Computer Science & Engineering Curriculum (R-2021):**
+    * **Source:** Anna University - Board of Studies
+    * **Link:** [B.E. CSE R-2021 Curriculum & Syllabi PDF](https://www.studentcompanion.in/wp-content/uploads/2022/10/R2021-BE-CSE-Curriculum-Syllabi.pdf) (Note: Link to a well-known educational repository; official links can be updated as they become available on `annauniv.edu`).
+    * **Reference:** Pages 3-10 for the semester-wise course lists and credit distribution.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technical Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   **Framework:** React + TypeScript
+-   **Build Tool:** Vite
+-   **Styling:** Tailwind CSS + Framer Motion
+-   **State Management:** Zustand
+-   **Charts:** Recharts
+-   **Testing:** Vitest (Unit) & Playwright (E2E)
+-   **CI/CD:** GitHub Actions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Configuration & Assumptions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Grade-Point Mapping
+The grade map is defined in `src/lib/config.ts` and can be easily updated if regulations change. The current implementation is:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+{
+  'O': 10, 'A+': 9, 'A': 8, 'B+': 7,
+  'B': 6, 'C': 5, 'RA': 0, 'SA': 0, 'W': 0,
+}
+```
 
-### Code Splitting
+### Arrear / Reappearance Policy
+As per R-2021 regulations, this calculator assumes the **best grade** obtained in any course is used for CGPA calculation. The history of attempts can be logged, but only the highest-scoring attempt is factored into the final CGPA.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Classification Thresholds
+Classification (Distinction, First Class) is calculated based on CGPA and can be configured in `src/lib/config.ts`. The current defaults are:
+-   **First Class with Distinction:** CGPA ≥ 8.5 and no history of arrears.
+-   **First Class:** CGPA ≥ 7.0.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Development & Setup
 
-### Making a Progressive Web App
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/au-cgpa-calculator.git](https://github.com/your-username/au-cgpa-calculator.git)
+    cd au-cgpa-calculator
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-### Advanced Configuration
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4.  **Run tests:**
+    ```bash
+    npm test
+    ```
