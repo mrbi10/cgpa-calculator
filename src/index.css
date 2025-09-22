@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+:root {
+  /* Default Light Theme Variables */
+  --background: #ffffff;
+  --foreground: #111827;
+  --accent: 220 90% 60%; /* HSL for blue */
+  
+  --font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html.dark {
+  /* Dark Theme Overrides */
+  --background: #111827;
+  --foreground: #f9fafb;
+}
+
+/* Apply preset colors using data attributes */
+html[data-preset-color="green"] { --accent: 145 63% 49%; }
+html[data-preset-color="purple"] { --accent: 262 84% 60%; }
+html[data-preset-color="orange"] { --accent: 25 95% 53%; }
+
+/* Apply font sizes using data attributes */
+html[data-font-size="sm"] { --font-size: 14px; }
+html[data-font-size="lg"] { --font-size: 18px; }
+
+/* Example Usage */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: var(--font-size);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.some-button {
+  background-color: hsl(var(--accent));
+  color: white;
 }
