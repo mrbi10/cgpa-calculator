@@ -77,8 +77,8 @@ Classification (Distinction, First Class) is calculated based on CGPA and can be
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/au-cgpa-calculator.git](https://github.com/your-username/au-cgpa-calculator.git)
-    cd au-cgpa-calculator
+    git clone https://github.com/mrbi10/student-cgpa-r2021.git
+    cd student-cgpa-r2021
     ```
 
 2.  **Install dependencies:**
