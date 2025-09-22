@@ -4,7 +4,7 @@ A premium, fast, and accurate CGPA calculator tailored specifically for the **B.
 
 This tool provides students with a high-end interface to calculate, simulate, and visualize their academic performance.
 
-**Live Demo (Mock):** [https://your-app-name.vercel.app](https://your-app-name.vercel.app)
+**Live Demo (Mock):** [https://mrbi10.github.io/cgpa-calculator/](https://mrbi10.github.io/cgpa-calculator/)
 
 
 
