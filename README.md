@@ -4,7 +4,7 @@ A premium, fast, and accurate CGPA calculator tailored specifically for the **B.
 
 This tool provides students with a high-end interface to calculate, simulate, and visualize their academic performance.
 
-**Live Demo (Mock):** [https://your-app-name.vercel.app](https://your-app-name.vercel.app)
+**Live Demo (Mock):** [https://mrbi10.github.io/cgpa-calculator/](https://mrbi10.github.io/cgpa-calculator/)
 
 
 
@@ -77,8 +77,8 @@ Classification (Distinction, First Class) is calculated based on CGPA and can be
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/au-cgpa-calculator.git](https://github.com/your-username/au-cgpa-calculator.git)
-    cd au-cgpa-calculator
+    git clone https://github.com/mrbi10/student-cgpa-r2021.git
+    cd student-cgpa-r2021
     ```
 
 2.  **Install dependencies:**
