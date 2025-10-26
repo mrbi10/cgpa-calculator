@@ -5,10 +5,17 @@ import { Sun, Moon, RefreshCw } from 'lucide-react';
 
 const presetColors = ['blue', 'green', 'purple', 'orange'] as const;
 const fontSizes = ['sm', 'base', 'lg'] as const;
+const colorClasses: Record<string, string> = {
+  blue: 'bg-blue-500',
+  green: 'bg-green-500',
+  purple: 'bg-purple-500',
+  orange: 'bg-orange-500',
+};
+
 
 export const SettingsPanel: React.FC = () => {
-  const { 
-    theme, 
+  const {
+    theme,
     toggleTheme,
     presetColor,
     setPresetColor,
@@ -29,7 +36,7 @@ export const SettingsPanel: React.FC = () => {
           <RefreshCw size={16} />
         </button>
       </div>
-      
+
       {/* Theme Toggle */}
       <div className="flex justify-between items-center py-2">
         <span className="text-gray-300">Theme</span>
@@ -43,22 +50,22 @@ export const SettingsPanel: React.FC = () => {
       </div>
 
       {/* Preset Color Selector */}
-      <div className="flex justify-between items-center py-2">
+      {/* <div className="flex justify-between items-center py-2">
         <span className="text-gray-300">Accent Color</span>
         <div className="flex items-center gap-2">
-          {presetColors.map((color) => (
-            <button
-              key={color}
-              onClick={() => setPresetColor(color)}
-              className={`w-6 h-6 rounded-full transition-transform hover:scale-110 ${
-                presetColor === color ? 'ring-2 ring-offset-2 ring-offset-gray-800 ring-white' : ''
-              }`}
-              style={{ backgroundColor: color }}
-              title={`Set accent color to ${color}`}
-            />
-          ))}
+        {presetColors.map((color) => (
+  <button
+    key={color}
+    onClick={() => setPresetColor(color)}
+    className={`w-6 h-6 rounded-full transition-transform hover:scale-110 ${
+      presetColor === color ? 'ring-2 ring-offset-2 ring-white' : ''
+    } ${colorClasses[color]}`}
+    title={`Set accent color to ${color}`}
+  />
+))}
+
         </div>
-      </div>
+      </div> */}
 
       {/* Font Size Selector */}
       <div className="flex justify-between items-center py-2">
@@ -68,9 +75,8 @@ export const SettingsPanel: React.FC = () => {
             <button
               key={size}
               onClick={() => setFontSize(size)}
-              className={`px-2 py-1 rounded transition-colors text-xs ${
-                fontSize === size ? 'bg-blue-500 text-white' : 'hover:bg-gray-600 text-gray-300'
-              }`}
+              className={`px-2 py-1 rounded transition-colors text-xs ${fontSize === size ? 'bg-blue-500 text-white' : 'hover:bg-gray-600 text-gray-300'
+                }`}
             >
               {size.toUpperCase()}
             </button>

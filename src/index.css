@@ -4,8 +4,9 @@
   /* Default Light Theme Variables */
   --background: #ffffff;
   --foreground: #111827;
-  --accent: 220 90% 60%; /* HSL for blue */
-  
+  --accent: 220 90% 60%;
+  /* HSL for blue */
+
   --font-size: 16px;
 }
 
@@ -16,13 +17,26 @@ html.dark {
 }
 
 /* Apply preset colors using data attributes */
-html[data-preset-color="green"] { --accent: 145 63% 49%; }
-html[data-preset-color="purple"] { --accent: 262 84% 60%; }
-html[data-preset-color="orange"] { --accent: 25 95% 53%; }
+html[data-preset-color="green"] {
+  --accent: 145 63% 49%;
+}
+
+html[data-preset-color="purple"] {
+  --accent: 262 84% 60%;
+}
+
+html[data-preset-color="orange"] {
+  --accent: 25 95% 53%;
+}
 
 /* Apply font sizes using data attributes */
-html[data-font-size="sm"] { --font-size: 14px; }
-html[data-font-size="lg"] { --font-size: 18px; }
+html[data-font-size="sm"] {
+  --font-size: 14px;
+}
+
+html[data-font-size="lg"] {
+  --font-size: 18px;
+}
 
 /* Example Usage */
 body {
@@ -36,3 +50,11 @@ body {
   background-color: hsl(var(--accent));
   color: white;
 }
+
+.text-accent { color: hsl(var(--accent)); }
+.bg-accent { background-color: hsl(var(--accent)); }
+.border-accent { border-color: hsl(var(--accent)); }
+
+
+
+text-[var(--accent-color)] bg-[var(--accent-color)]

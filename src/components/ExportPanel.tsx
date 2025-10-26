@@ -2,55 +2,83 @@
 import React from 'react';
 import { useAppStore } from '../store/store';
 import { Share2, FileDown, FileText } from 'lucide-react';
+import pako from "pako";
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
+
 
 export const ExportPanel: React.FC = () => {
   const semesters = useAppStore((state) => state.semesters);
 
-  const handleShareLink = () => {
-    try {
-      const stateToShare = { semesters };
-      const jsonString = JSON.stringify(stateToShare);
-      const encodedState = btoa(jsonString);
-      const url = `${window.location.origin}?data=${encodedState}`;
-      navigator.clipboard.writeText(url);
-      alert('Shareable link copied to clipboard!');
-    } catch (error) {
-      console.error("Failed to create shareable link:", error);
-      alert("Could not create a shareable link.");
+
+const handleShareLink = async () => {
+  try {
+    if (!semesters || semesters.length === 0) {
+      alert("No data to share.");
+      return;
     }
-  };
 
-  const handleExportPDF = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text("CGPA Export Report", 14, 20);
+    const jsonString = JSON.stringify({ semesters });
+    // compress
+    const compressed = pako.deflate(jsonString, { to: 'string' });
+    // base64 encode
+    const encoded = btoa(compressed);
 
-    semesters.forEach((semester, index) => {
-      const rows = semester.courses
-        .filter((course) => course.grade) // include only graded courses
-        .map((course) => [
-          course.code,
-          course.name,
-          course.credits,
-          course.grade,
-        ]);
+    const url = `${window.location.origin}${window.location.pathname}?d=${encoded}`;
+    console.log("Shareable URL:", url);
 
-      if (rows.length > 0) {
-        (doc as any).autoTable({
-          head: [["Course Code", "Course Name", "Credits", "Grade"]],
-          body: rows,
-          startY: index === 0 ? 30 : (doc as any).lastAutoTable.finalY + 10,
-          theme: "grid",
-          headStyles: { fillColor: [30, 64, 175] }, // Tailwind indigo-800
-        });
-        doc.text(`Semester ${semester.id}`, 14, (doc as any).lastAutoTable.finalY - rows.length * 8 - 4);
-      }
-    });
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(url);
+      alert(" Shareable link copied!");
+    } else {
+      const textArea = document.createElement("textarea");
+      textArea.value = url;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      alert("✅ Link copied!");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Failed to create shareable link.");
+  }
+};
 
-    doc.save("cgpa_export.pdf");
-  };
+
+
+const handleExportPDF = () => {
+  if (!semesters || semesters.length === 0) return alert("No data to export.");
+
+  const doc = new jsPDF();
+  doc.setFontSize(16);
+  doc.text("CGPA Export Report", 14, 20);
+
+  let yOffset = 30;
+
+  semesters.forEach((semester) => {
+    const rows = semester.courses
+      .filter(c => c.grade)
+      .map(c => [c.code, c.name, c.credits, c.grade]);
+
+    if (rows.length) {
+      doc.text(`Semester ${semester.id}`, 14, yOffset - 5);
+      autoTable(doc, {
+        startY: yOffset,
+        head: [["Course Code", "Course Name", "Credits", "Grade"]],
+        body: rows,
+        theme: 'grid',
+        headStyles: { fillColor: [14, 116, 144] },
+        margin: { left: 14, right: 14 },
+      });
+      yOffset = (doc as any).lastAutoTable ? (doc as any).lastAutoTable.finalY + 10 : yOffset + 50;
+    }
+  });
+
+  doc.save("cgpa_export.pdf");
+};
+
+
 
   const handleExportCSV = () => {
     let csvContent = "data:text/csv;charset=utf-8,Semester,Course Code,Course Name,Credits,Grade\n";
@@ -76,14 +104,14 @@ export const ExportPanel: React.FC = () => {
     <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-white/10">
       <h3 className="text-lg font-semibold text-white mb-4">Export & Share</h3>
       <div className="flex justify-around items-center">
-        <button
+        {/* <button
           onClick={handleShareLink}
           className="flex flex-col items-center space-y-1 text-gray-300 hover:text-sky-400 transition-colors"
           title="Copy a shareable link"
         >
           <Share2 size={24} />
           <span className="text-xs">Share Link</span>
-        </button>
+        </button> */}
         <button
           onClick={handleExportPDF}
           className="flex flex-col items-center space-y-1 text-gray-300 hover:text-sky-400 transition-colors"
