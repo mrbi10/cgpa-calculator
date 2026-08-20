@@ -2,7 +2,7 @@
   "name": "cgpa-calculator",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://cgpa.mrbi.live",
+  "homepage": "https://mrbi10.github.io/cgpa-calculator/",
   "type": "module",
   "scripts": {
     "dev": "vite",
